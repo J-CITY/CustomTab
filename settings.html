@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style> 
+        input[type=text] {
+            width: 80%;
+            padding: 12px 10px;
+            margin: 2px 0;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 1px solid gray;
+        }
+        input[type=button] {
+            background-color: gray;
+            border: none;
+            color: white;
+            padding: 13px 10px;
+            text-decoration: none;
+            margin: 2px 0;
+            cursor: pointer;
+        }
+		.container {
+		    display: block;
+		    position: relative;
+		    padding-left: 35px;
+		    margin-bottom: 12px;
+		    cursor: pointer;
+		    font-size: 22px;
+		    -webkit-user-select: none;
+		    -moz-user-select: none;
+		    -ms-user-select: none;
+		    user-select: none;
+		}
+		.checkmark {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    height: 25px;
+		    width: 25px;
+		    background-color: #eee;
+		}
+		/* On mouse-over, add a grey background color */
+		.container:hover input ~ .checkmark {
+		    background-color: #ccc;
+		}
+
+		/* When the checkbox is checked, add a blue background */
+		.container input:checked ~ .checkmark {
+		    background-color: gray;
+		}
+
+		/* Create the checkmark/indicator (hidden when not checked) */
+		.checkmark:after {
+		    content: "";
+		    position: absolute;
+		    display: none;
+		}
+
+		/* Show the checkmark when checked */
+		.container input:checked ~ .checkmark:after {
+		    display: block;
+		}
+
+		/* Style the checkmark/indicator */
+		.container .checkmark:after {
+		    left: 9px;
+		    top: 5px;
+		    width: 5px;
+		    height: 10px;
+		    border: solid white;
+		    border-width: 0 3px 3px 0;
+		    -webkit-transform: rotate(45deg);
+		    -ms-transform: rotate(45deg);
+		    transform: rotate(45deg);
+		}
+		/* Hide the browser's default checkbox */
+		.container input {
+		    position: absolute;
+		    opacity: 0;
+		    cursor: pointer;
+		}
+        body{max-width: 400px; min-width: 400px;}
+    </style>
+    <script src="scripts/popup.js"></script>
+    <script src="scripts/onclick.js"></script>
+    <script src="scripts/settings.js"></script>
+    <title></title>
+</head>
+<body>
+	<font size="5" face="Arial"><b>CustomTab SETTINGS</b></font><br><br>
+    <input id="url" type="text" placeholder="New tab URL...">
+	<input id="btn" value=" OK " type="button"><br><br>
+	<label class="container"><font size="5" face="Arial">Use update tab. (Not riderect)</font>
+		<input type="checkbox" id="isUpdate">
+		<span class="checkmark"></span>
+	</label>
+
+	<font size="5" face="Arial">Set chrome page as new tab</font><br><br>
+	<input id="btnApps" value=" apps " type="button">
+	<input id="btnBookmarks" value=" bookmarks " type="button">
+	<input id="btnHistory" value=" history " type="button">
+	<input id="btnNewtab" value=" newtab " type="button">
+	<br><br>
+	<input id="btnSettings" value=" settings " type="button">
+	<input id="btnDownloads" value=" downloads " type="button">
+	<input id="btnExtensions" value=" extensions " type="button">
+	<br><br>
+</body>
+</html>
