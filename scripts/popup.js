@@ -34,7 +34,7 @@ function getSettingsUrl(id) {
                 }
                 
                 if (!isUpdate){
-                    chrome.tabs.getSelected(null, (tab) => {
+                    chrome.tabs.query({active: true}, (tab) => {
                         chrome.tabs.create({"url": preference}, (_tab) => {
                             chrome.tabs.remove(tab.id);
                         });
