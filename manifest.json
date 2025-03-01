@@ -1,5 +1,5 @@
 {
-   "manifest_version": 2,
+   "manifest_version": 3,
    "name": "CustomTab",
    "version": "1.0",
    "icons": {
@@ -7,13 +7,12 @@
    },
    "permissions": [
         "tabs",
-        "storage",
-        "file://*/*"
+        "storage"
    ],
    "chrome_url_overrides" : {
       "newtab": "redirect.html"
    },
-   "browser_action": {
+   "action": {
        "default_title": "Change tab",
        "default_icon": "icons/128x128.png",
        "default_popup": "popup.html"
